@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">StockQuotes</string>
+
+    <string name="EnterSym">"Enter Stock symbol: "</string>
+
+    <string name="Sym">Symbol:</string>
+
+    <string name="Name">Name:</string>
+
+    <string name="LastPrice">Last Trade Price</string>
+
+    <string name="LastTime">Last Trade Time</string>
+
+    <string name="Change">Change</string>
+
+    <string name="WeekRange">52 Week Range</string>
+
+
 </resources>
