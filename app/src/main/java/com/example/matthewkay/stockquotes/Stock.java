@@ -1,11 +1,12 @@
 package com.example.matthewkay.stockquotes;
 
-import android.util.Log;
 
-import org.json.JSONObject;
+        import android.util.Log;
 
-import java.net.*;
-import java.io.*;
+        import org.json.JSONObject;
+
+        import java.net.*;
+        import java.io.*;
 
 
 public class Stock implements Serializable

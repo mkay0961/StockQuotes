@@ -2,44 +2,132 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
-
-    <TextView
-        android:id="@+id/Enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_alignBaseline="@+id/editEnter"
-        android:layout_alignBottom="@+id/editEnter"
-        android:layout_alignParentStart="true"
-        android:text="@string/EnterSym" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_toRightOf="@+id/Enter"
-        android:layout_alignParentRight="true"
-        android:id="@+id/editEnter" />
-
-    <TextView
-        android:id="@+id/Sym"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/symEnter"
-        android:layout_alignBottom="@+id/symEnter"
-        android:layout_toStartOf="@+id/editEnter"
-        android:text="@string/Sym" />
+    android:paddingLeft="@dimen/leftpad"
+    android:paddingRight="@dimen/rightpad" >
 
     <EditText
-        android:id="@+id/symEnter"
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editEnter"
-        android:layout_toEndOf="@+id/Sym"
-        android:gravity="center"
-        android:text="kjshdfkjhs" />
+        android:inputType="text"
+        android:hint="@string/prompt"
+        android:paddingTop="@dimen/ppadding"
 
+        />
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/tpadding"
+        >
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/symtext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/sym"
+                android:textSize="@dimen/textsize"
+                />
+            <TextView
+                android:id="@+id/symdisplay"
+                android:layout_width="@dimen/textbox"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:background="@color/Black"
+                android:textColor="@color/lime"
+                android:text="@string/space"/>
+        </TableRow>
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/name"
+                android:textSize="@dimen/textsize"
+                 />
+            <TextView
+                android:id="@+id/namedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:background="@color/Black"
+                android:textColor="@color/lime"
+                 />
+        </TableRow>
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/lastpricetext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/lastPrice"
+                android:textSize="@dimen/textsize"
+                 />
+            <TextView
+                android:id="@+id/lastpricedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:textColor="@color/lime"
+                android:background="@color/Black"
+                 />
+        </TableRow>
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/lasttimetext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/lastTime"
+                android:textSize="@dimen/textsize"
+                />
+            <TextView
+                android:id="@+id/lasttimedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:textColor="@color/lime"
+                android:background="@color/Black"
+                 />
+        </TableRow>
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/changetext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/change"
+                android:textSize="@dimen/textsize"
+                />
 
+            <TextView
+                android:id="@+id/changedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:background="@color/Black"
+                android:textColor="@color/lime"
+                 />
+        </TableRow>
+        <TableRow android:gravity="center">
+            <TextView
+                android:id="@+id/rangetext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="viewEnd"
+                android:text="@string/weekrange"
+                android:textSize="@dimen/textsize"
+                 />
+            <TextView
+                android:id="@+id/rangedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/textsize"
+                android:textColor="@color/lime"
+                android:background="@color/Black"
+                />
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>
