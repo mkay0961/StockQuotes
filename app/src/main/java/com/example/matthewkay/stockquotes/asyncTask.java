@@ -2,10 +2,13 @@ package com.example.matthewkay.stockquotes;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 /**
  * Created by MatthewKay on 3/13/18.
@@ -26,36 +29,45 @@ public class asyncTask extends AsyncTask<String, String, String> {
         this.Change = Change;
         this.WeekRange = WeekRange;
         this.context = context;
+        Log.i("test","been constructed");
     };
 
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
-
 
     @Override
-    protected ArrayList<String> doInBackground(String ... strings) {
-        ArrayList<String> arrayList = new ArrayList<>();
+    protected String doInBackground(String ... strings) {
+        arrayList = new ArrayList<>();
         Stock stock;
 
+        String rtn = "";
+        Log.i("test","makeing stock");
+
         stock = new Stock(strings[0]);
+
         try {
             stock.load();
         }
         catch (Exception e) {
-            onProgressUpdate();
+            System.out.println(e);
         }
+        Log.i("test","about to add to array");
+        //Log.i("test","trying to find sybmol" + stock.getName());
 
-        arrayList.add(0, stock.getSymbol());
-        arrayList.add(1,stock.getName());
-        arrayList.add(2,stock.getLastTradePrice());
-        arrayList.add(3,stock.getLastTradeTime());
-        arrayList.add(4,stock.getChange());
-        arrayList.add(5,stock.getRange());
+        try {
+            arrayList.add(stock.getSymbol());
+            arrayList.add(stock.getName());
+            arrayList.add(stock.getLastTradePrice());
+            arrayList.add(stock.getLastTradeTime());
+            arrayList.add(stock.getChange());
+            arrayList.add(stock.getRange());
 
+        }
+        catch(Exception e){
+            Log.i("j", "ERRROROOROOROR");
+            Toast.makeText(context, "You Entered A Invalid Symbol", LENGTH_SHORT).show();
+        }
+        Log.i("test","done adding to array");
 
-        return arrayList;
+        return rtn;
 
 
 
@@ -66,19 +78,24 @@ public class asyncTask extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String string) {
-        super.onPostExecute(arrayList);
+        Log.i("test","about to try and set ");
 
-        try {
-            Symbol.setText(arrayList.get(0));
+        //problem
+        if(arrayList.get(1) != null) {
             Name.setText(arrayList.get(1));
+            Symbol.setText(arrayList.get(0));
             TradePrice.setText(arrayList.get(2));
             TradeTime.setText(arrayList.get(3));
             Change.setText(arrayList.get(4));
             WeekRange.setText(arrayList.get(5));
         }
-        catch (Exception e){
-            System.out.println(e);
+        else {
+            Toast.makeText(context, "YOU ENTERED A WRONG SYMBOL", LENGTH_SHORT).show();
+
         }
+
+
+        Log.i("test","set");
 
 
 

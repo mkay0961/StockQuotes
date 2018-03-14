@@ -3,12 +3,18 @@ package com.example.matthewkay.stockquotes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     TextView symbol, name, price, time, change, range;
+    EditText text;
+    asyncTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +27,29 @@ public class MainActivity extends AppCompatActivity {
         time = (TextView) findViewById(R.id.lasttimedisplay);
         change = (TextView) findViewById(R.id.changedisplay);
         range = (TextView) findViewById(R.id.rangedisplay);
-        asyncTask task = new asyncTask(symbol,name,price,time,change,range,this);
-        task.execute("GOOG");
-        Log.i("he", (String) symbol.getText());
+        text = (EditText) findViewById(R.id.search);
+        Log.i("test","making task");
 
+        Log.i("test","execueting");
+        //task.execute("GOOG");
+        Log.i("h", "executed");
+        //Log.i("he", (String) symbol.getText());
+        text.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP)) {
+                    Log.i("h", "enter !!!!!!!!!");
+                    Log.i("h", String.valueOf(text.getText()).trim());
 
+                    task = new asyncTask(symbol,name,price,time,change,range,getApplicationContext());
+                    task.execute(String.valueOf(text.getText()).trim().toUpperCase());
+                    //Toast.makeText(, text.getText(), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        Log.i("h", "click listen");
     }
 
 
