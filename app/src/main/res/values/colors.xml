@@ -5,5 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="background">#BF8D82</color>
     <color name="Black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text">#A42C09</color>
     <color name="lime">#00FF00</color>
 </resources>

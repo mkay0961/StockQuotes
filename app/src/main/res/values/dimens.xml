@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="ppadding">40dip</dimen>
-    <dimen name="tpadding">100dip</dimen>
+    <dimen name="ppadding">20dip</dimen>
+    <dimen name="tpadding">75dip</dimen>
     <dimen name="textsize">17sp</dimen>
     <dimen name="rightpad">16dp</dimen>
+    <dimen name="space">10dp</dimen>
     <dimen name="leftpad">16dp</dimen>
     <dimen name="textbox">150dp</dimen>
 </resources>

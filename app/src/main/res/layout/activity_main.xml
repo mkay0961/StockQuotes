@@ -4,7 +4,7 @@
     android:paddingLeft="@dimen/leftpad"
     android:paddingRight="@dimen/rightpad"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@drawable/pic"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
@@ -22,14 +22,18 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:paddingTop="@dimen/tpadding"
         >
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/symtext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/sym"
                 android:textSize="@dimen/textsize"
                 />
@@ -38,16 +42,20 @@
                 android:layout_width="@dimen/textbox"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:background="@color/Black"
-                android:textColor="@color/lime"
+                android:background="@color/white"
+                android:textColor="@color/Black"
+
                 android:text="@string/space"/>
         </TableRow>
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/nametext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/name"
                 android:textSize="@dimen/textsize"
                  />
@@ -56,16 +64,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:background="@color/Black"
-                android:textColor="@color/lime"
+                android:background="@color/white"
+                android:textColor="@color/Black"
+
                  />
         </TableRow>
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/lastpricetext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/lastPrice"
                 android:textSize="@dimen/textsize"
                  />
@@ -74,16 +86,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:textColor="@color/lime"
-                android:background="@color/Black"
+                android:background="@color/white"
+                android:textColor="@color/Black"
+
                  />
         </TableRow>
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/lasttimetext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/lastTime"
                 android:textSize="@dimen/textsize"
                 />
@@ -92,16 +108,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:textColor="@color/lime"
-                android:background="@color/Black"
+                android:background="@color/white"
+                android:textColor="@color/Black"
+
                  />
         </TableRow>
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/changetext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/change"
                 android:textSize="@dimen/textsize"
                 />
@@ -111,16 +131,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:background="@color/Black"
-                android:textColor="@color/lime"
+
+                android:background="@color/white"
+                android:textColor="@color/Black"
                  />
         </TableRow>
-        <TableRow android:gravity="center">
+        <TableRow android:gravity="center"
+            android:paddingBottom="@dimen/space">
             <TextView
                 android:id="@+id/rangetext"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="viewEnd"
+                android:background="@color/Black"
+                android:textColor="@color/white"
                 android:text="@string/weekrange"
                 android:textSize="@dimen/textsize"
                  />
@@ -129,21 +153,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/textsize"
-                android:textColor="@color/lime"
-                android:background="@color/Black"
+                android:background="@color/white"
+                android:textColor="@color/Black"
+
                 />
 
         </TableRow>
 
 
     </TableLayout>
-    <ImageView
-        android:src="@drawable/stock"
-        android:id="@+id/im1"
-        android:scaleType="fitXY"
-        android:layout_alignParentBottom="true"
-        android:gravity="bottom|center_horizontal"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+
 
 </RelativeLayout>

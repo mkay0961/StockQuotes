@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
                     task = new asyncTask(symbol,name,price,time,change,range,getApplicationContext());
                     task.execute(String.valueOf(text.getText()).trim().toUpperCase());
-                    //Toast.makeText(, text.getText(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), text.getText(), Toast.LENGTH_SHORT).show();
                     return true;
                 }
                 return false;
